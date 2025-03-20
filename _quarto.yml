@@ -1,0 +1,36 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Dr. zhu meng xuan's Academic Portfolio"
+  site-url: https://username.github.io/academic-website/
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: files/resume.pdf
+        text: CV
+    right:
+      - icon: github
+        href: https://github.com/username
+      - icon: linkedin
+        href: https://linkedin.com/in/username
+  
+    variables:
+      theme-dark: false
+      font-family-base: "Georgia, serif"
+      link-color: "#2c3e50"
+      navbar-bg: "#f8f9fa"
+      footer-bg: "#343a40"
+      footer-fg: "#ffffff"
+
+format:
+  html:
+    theme: litera
+    toc: false
+    css: styles/styles.css
+    includes:
+      after-body: partials/footer.html

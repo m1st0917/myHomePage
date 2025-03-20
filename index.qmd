@@ -1,0 +1,32 @@
+---
+title: "Home"
+---
+
+## Recent Publications
+
+```{r}
+#| echo: false
+library(quarto)
+publications <- tibble::tribble(
+  ~Year, ~Title, ~Journal,
+  2024, "Advancements in Neural Network Architectures", "Nature AI",
+  2023, "Deep Learning for Medical Imaging Analysis", "IEEE TMI",
+  2022, "Optimizing CNN Performance on Edge Devices", "CVPR"
+)
+
+knitr::kable(publications)
+```
+
+::: {.grid}
+::: {.g-col-4}
+![Research Photo](images/research.jpg){.img-fluid .rounded-3}
+:::
+
+::: {.g-col-8}
+### Research Interests
+- Deep Learning Architectures
+- Medical Image Analysis
+- Edge Computing Optimization
+- AI for Social Good
+:::
+:::

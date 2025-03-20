@@ -1,0 +1,21 @@
+---
+title: "About"
+---
+
+### Education
+- **Ph.D. in Computer Science**  
+  Tsinghua University, 2020-2024  
+  Dissertation: "Deep Learning for Medical Image Analysis"
+
+- **M.S. in Artificial Intelligence**  
+  Peking University, 2017-2020
+
+### Honors & Awards
+- Best Paper Award, CVPR 2023
+- Microsoft Research Fellowship 2021
+- National Scholarship 2019
+
+### Contact
+- :envelope: liming@academic.com
+- :office: Room 301, Computer Science Building, Tsinghua University
+- :globe_with_meridians: [Personal Blog](https://liming.ai)

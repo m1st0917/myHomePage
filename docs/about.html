@@ -24,6 +24,10 @@ ul.task-list li input[type="checkbox"] {
 /* 新增样式 */
 h1.title {
   animation: flash 1s infinite;
+  color: #00ff9d;
+  text-shadow: 0 0 10px rgba(0, 255, 157, 0.7);
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
 }
 
 @keyframes flash {
@@ -35,11 +39,70 @@ h1.title {
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #fff;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #002240, #004060);
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #00ff9d;
+  text-shadow: 0 0 5px rgba(0, 255, 157, 0.7);
+}
+
+.nav-link {
+  color: #fff !important;
+  margin: 0 1rem;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #00ff9d !important;
+  text-shadow: 0 0 5px rgba(0, 255, 157, 0.7);
+}
+
+.content {
+  max-width: 800px;
+  margin: 80px auto 40px;
+  padding: 2rem;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 section {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(0, 34, 64, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+h3 {
+  color: #00ff9d;
+  border-bottom: 2px solid #00ff9d;
+  padding-bottom: 0.5rem;
+  margin-top: 0;
 }
 
 ul {
@@ -49,37 +112,46 @@ ul {
 
 ul li:before {
   content: "• ";
-  color: #007bff;
+  color: #00ff9d;
   font-weight: bold;
 }
 
-.navbar {
-  background-color: #007bff;
-  transition: background-color 0.3s;
+li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed rgba(0, 255, 157, 0.2);
 }
 
-.navbar:hover {
-  background-color: #0056b3;
+li:last-child {
+  border-bottom: none;
 }
 
-.nav-link {
-  transition: color 0.3s;
+/* 按钮样式 */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(90deg, #002240, #004060);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-shadow: 0 0 3px rgba(0, 255, 157, 0.5);
 }
 
-.nav-link:hover {
-  color: #fff !important;
+.btn:hover {
+  background: linear-gradient(90deg, #004060, #002240);
+  box-shadow: 0 0 10px rgba(0, 255, 157, 0.7);
+  transform: translateY(-2px);
 }
 
-.content {
-  max-width: 800px;
-  margin: 0 auto;
+/* 底部样式 */
+.footer {
+  text-align: center;
   padding: 2rem;
-  animation: fadeIn 1s;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
 }
 </style>
 
@@ -128,15 +200,19 @@ ul li:before {
   }
 }</script>
 
+<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/postprocessing/UnrealBloomPass.js"></script>
 
-<link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
@@ -223,7 +299,7 @@ ul li:before {
 华中农业大学，2020-2024<br>
 论文题目：“相关学术研究”</p></li>
 <li><p><strong>学士</strong><br>
-某大学，2016-2020</p></li>
+青岛农业大学，2016-2020</p></li>
 </ul>
 </section>
 
@@ -242,6 +318,7 @@ ul li:before {
 <ul>
 <li>邮箱: zhumengxuan0917@163.com</li>
 </ul>
+<button class="btn">联系我</button>
 </section>
 
 </main> <!-- /主要部分 -->
@@ -661,9 +738,66 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /内容 -->
 
+<!-- 3D背景效果 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0x000000, 0);
+  document.body.appendChild(renderer.domElement);
 
+  const geometry = new THREE.BufferGeometry();
+  const vertices = [];
+  for (let i = 0; i < 10000; i++) {
+    const x = Math.random() * 2000 - 1000;
+    const y = Math.random() * 2000 - 1000;
+    const z = Math.random() * 2000 - 1000;
+    vertices.push(x, y, z);
+  }
+  geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
 
+  const material = new THREE.PointsMaterial({
+    size: 1,
+    color: 0x00ff9d,
+    transparent: true,
+    opacity: 0.8
+  });
 
+  const particles = new THREE.Points(geometry, material);
+  scene.add(particles);
+
+  camera.position.z = 1000;
+
+  const composer = new THREE.EffectComposer(renderer);
+  const renderPass = new THREE.RenderPass(scene, camera);
+  composer.addPass(renderPass);
+
+  const bloomPass = new THREE.UnrealBloomPass(
+    new THREE.Vector2(window.innerWidth, window.innerHeight),
+    1.5, 
+    0.4, 
+    0.85
+  );
+  bloomPass.threshold = 0;
+  bloomPass.strength = 2;
+  composer.addPass(bloomPass);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    particles.rotation.y += 0.0002;
+    composer.render();
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    composer.setSize(window.innerWidth, window.innerHeight);
+  });
+});
+</script>
 </body></html>
